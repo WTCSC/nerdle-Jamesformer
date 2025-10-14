@@ -9,21 +9,24 @@ For example: 12+34=46 or 8*7=56
 ########################################
 # TODO: Import the appropriate modules #
 ########################################
-
+import random
 ###########################################
 # TODO: Implement the following functions #
 ###########################################
 
 def generate_numbers_for_addition():
-    """
-    Generate two numbers that when added create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For addition, we want numbers that create 8 total characters
-    Format: NN+NN=NN (2+1+2+1+2 = 8 characters)
 
-    Example: (12, 34, 46) creates "12+34=46"
-    """
+    while True:
+        a = random.randint(1, 99)
+        b = random.randint(1, 99)
+        c = a + b
+
+        if c >= 100:
+            continue
+
+        equation = f"{a} + {b} = {c}"
+        return equation
+
 
 def generate_numbers_for_subtraction():
     """
@@ -182,3 +185,4 @@ def validate_equation(equation):
     except ZeroDivisionError:
         # Division by zero is invalid
         return False
+    
