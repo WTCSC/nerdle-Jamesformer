@@ -9,56 +9,61 @@ For example: 12+34=46 or 8*7=56
 ########################################
 # TODO: Import the appropriate modules #
 ########################################
-
+import random
 ###########################################
 # TODO: Implement the following functions #
 ###########################################
 
 def generate_numbers_for_addition():
-    """
-    Generate two numbers that when added create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For addition, we want numbers that create 8 total characters
-    Format: NN+NN=NN (2+1+2+1+2 = 8 characters)
 
-    Example: (12, 34, 46) creates "12+34=46"
-    """
+    while True:
+        a = random.randint(10, 89)
+        b = random.randint(10, 89)
+        c = a + b
+
+        if c >= 100:
+            continue
+
+        equation = a + b = c
+        return equation
+
 
 def generate_numbers_for_subtraction():
-    """
-    Generate two numbers that when subtracted create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For subtraction, we want positive results only
-    Format: NN-NN=NN (2+1+2+1+2 = 8 characters)
+   
+   while True:
+       a = random.randint(10, 99)
+       b = random.randint(10, 99)
+       c = a - b
 
-    Example: (56, 23, 33) creates "56-23=33"
-    """
+       if c <= 0:
+           continue
+       
+       equation = a - b = c
+       return equation
+
 
 def generate_numbers_for_multiplication():
-    """
-    Generate two numbers that when multiplied create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
     
-    For multiplication, we need exactly 8 characters
-    Format: N*NN=NNN (1+1+2+1+3 = 8 characters)
-    Single digit * two digit = three digit result
-    
-    Example: (3, 34, 102) creates "3*34=102" (8 characters)
-    """
+    while True:
+        a = random.randint(20, 25)
+        b = random.randint(5, 9)
+        c = a * b
+
+        if c <= 100:
+            continue
+
+        equation = a * b = c
+        return equation
 
 def generate_numbers_for_division():
-    """
-    Generate two numbers that when divided create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
     
-    For division, we want exact division (no remainders)
-    Format: NNN/NN=N (3+1+2+1+1 = 8 characters)
-    We need to work backwards: result * divisor = dividend
+    while True:
+        a = random.randint(100, 450)
+        b = random.randint(50, 99)
+        c = a / b
 
-    Example: (252, 36, 7) creates "252/36=7"
-    """
+        equation = a / b = c
+        return equation
     
 ################################################################################
 #  DO NOT EDIT BELOW THIS LINE, THESE FUNCTIONS ARE ALREADY COMPLETED FOR YOU  #
@@ -182,3 +187,4 @@ def validate_equation(equation):
     except ZeroDivisionError:
         # Division by zero is invalid
         return False
+    
